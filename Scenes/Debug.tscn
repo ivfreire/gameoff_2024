@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://ejjq2enybhat"]
+
+[ext_resource type="PackedScene" uid="uid://dpv2lytalq7rt" path="res://Prefabs/Player.tscn" id="1_qml3g"]
+[ext_resource type="PackedScene" uid="uid://cqh88j1ty01qh" path="res://Prefabs/Block.tscn" id="2_e7hdg"]
+
+[node name="Debug" type="Node2D"]
+position = Vector2(416, 232)
+
+[node name="Player" parent="." instance=ExtResource("1_qml3g")]
+position = Vector2(104, 136)
+
+[node name="Blocks" type="Node2D" parent="."]
+position = Vector2(-16, 88)
+
+[node name="Block" parent="Blocks" instance=ExtResource("2_e7hdg")]
+position = Vector2(-176, 264)
+
+[node name="Block2" parent="Blocks" instance=ExtResource("2_e7hdg")]
+position = Vector2(-112, 264)
+
+[node name="Block3" parent="Blocks" instance=ExtResource("2_e7hdg")]
+position = Vector2(-48, 264)
+
+[node name="Block4" parent="Blocks" instance=ExtResource("2_e7hdg")]
+position = Vector2(16, 264)
+
+[node name="Block5" parent="Blocks" instance=ExtResource("2_e7hdg")]
+position = Vector2(80, 264)
+
+[node name="Block6" parent="Blocks" instance=ExtResource("2_e7hdg")]
+position = Vector2(144, 264)
+
+[node name="Block7" parent="Blocks" instance=ExtResource("2_e7hdg")]
+position = Vector2(208, 264)
+
+[node name="Block8" parent="Blocks" instance=ExtResource("2_e7hdg")]
+position = Vector2(272, 264)
+
+[node name="Block9" parent="Blocks" instance=ExtResource("2_e7hdg")]
+position = Vector2(336, 264)
+
+[node name="Block10" parent="Blocks" instance=ExtResource("2_e7hdg")]
+position = Vector2(400, 264)
+
+[node name="Block11" parent="Blocks" instance=ExtResource("2_e7hdg")]
+position = Vector2(464, 264)
+
+[node name="Block12" parent="Blocks" instance=ExtResource("2_e7hdg")]
+position = Vector2(528, 264)
