@@ -11,7 +11,6 @@ var able_hide = false
 var hide = false
 
 func _physics_process(delta: float) -> void:
-	### motion 
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 

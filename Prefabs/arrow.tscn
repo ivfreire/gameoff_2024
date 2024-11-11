@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://boyov0ho5ctx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lo01x"]
+radius = 2.0
+
+[node name="Arrow" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 2
+mass = 0.05
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = 2.0
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_lo01x")
