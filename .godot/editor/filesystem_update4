@@ -1,0 +1,12 @@
+res://Scenes/Debug.tscn
+res://Scripts/Player.gd
+res://Objects/bullet.gd
+res://Scenes/bullet_spawner.gd
+res://Objects/bullet.tscn
+res://Objects/bullet_spawner.tscn
+res://Scripts/Object_scripts/bullet.gd
+res://Prefabs/Player.tscn
+res://Scripts/Object_scripts/thorn.gd
+res://Objects/thorn.tscn
+res://Scripts/Object_scripts/hidden.gd
+res://Objects/hidden.tscn

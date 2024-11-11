@@ -1,0 +1,5 @@
+Label
+CollisionShape2D
+ColorRect
+Area2D
+Timer
