@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://dpv2lytalq7rt" path="res://Prefabs/Player.tscn" id="1_qml3g"]
 [ext_resource type="Texture2D" uid="uid://b1srehlhju7eq" path="res://Sprites/Block.png" id="2_1m4kc"]
-[ext_resource type="Script" path="res://Scripts/Camera.gd" id="3_1i8mu"]
 [ext_resource type="PackedScene" uid="uid://7lx6so5e1xwp" path="res://Objects/bullet_spawner.tscn" id="4_53k6g"]
 [ext_resource type="PackedScene" uid="uid://cfcwwra7qqg1w" path="res://Objects/thorn.tscn" id="5_5wr5c"]
+[ext_resource type="PackedScene" uid="uid://d3ty6inwsci38" path="res://Scenes/camera.tscn" id="5_as7vk"]
 [ext_resource type="PackedScene" uid="uid://b1vgfa8f8evs7" path="res://Objects/hidden.tscn" id="6_camus"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7i2nf"]
@@ -33,11 +33,7 @@ collision_layer = 8
 [node name="Player" parent="." instance=ExtResource("1_qml3g")]
 position = Vector2(193, 288)
 
-[node name="Camera" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
-position = Vector2(138, 281)
-zoom = Vector2(2.5, 2.5)
-script = ExtResource("3_1i8mu")
-player = NodePath("../Player")
+[node name="Camera" parent="." instance=ExtResource("5_as7vk")]
 
 [node name="World" type="Node2D" parent="."]
 

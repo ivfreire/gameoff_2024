@@ -1,3 +1,6 @@
+res://Sprites/plataform_blob/tileset_plataform_blob.tres
+res://Sprites/plataform_wang/tileset_plataform_wang.tres
+res://lookdev_delet_later.tscn
 res://Scenes/Debug.tscn
 res://Objects/bullet.tscn
 res://Objects/bullet_spawner.tscn
@@ -7,3 +10,5 @@ res://Objects/hidden.tscn
 res://Prefabs/arrow.tscn
 res://Prefabs/Block.tscn
 res://Scripts/Player.gd
+res://Scenes/hike.tscn
+res://Scripts/Object_scripts/hike.gd

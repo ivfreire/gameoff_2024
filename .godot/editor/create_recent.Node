@@ -1,5 +1,9 @@
-Label
 CollisionShape2D
 ColorRect
-Area2D
+Hike
 Timer
+Area2D
+Sprite2D
+AnimatedSprite2D
+TileMapLayer
+Label

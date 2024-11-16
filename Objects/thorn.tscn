@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cfcwwra7qqg1w"]
+[gd_scene load_steps=4 format=3 uid="uid://cfcwwra7qqg1w"]
 
 [ext_resource type="Script" path="res://Scripts/Object_scripts/thorn.gd" id="1_yp1cf"]
+[ext_resource type="Texture2D" uid="uid://dyav5nkp776tk" path="res://Sprites/thorn.png" id="2_oo5fa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rj0v8"]
 size = Vector2(16, 16)
@@ -10,21 +11,17 @@ collision_layer = 8
 collision_mask = 9
 script = ExtResource("1_yp1cf")
 
-[node name="sprite" type="ColorRect" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -8.0
-offset_top = -8.0
-offset_right = 8.0
-offset_bottom = 8.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(1, 0.0156863, 0.0431373, 1)
-
 [node name="shape" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_rj0v8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0.699653, 0.699653, 0.699653, 1)
+position = Vector2(-4, 0)
+texture = ExtResource("2_oo5fa")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(3, -1)
+scale = Vector2(1.25, 1.125)
+texture = ExtResource("2_oo5fa")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
