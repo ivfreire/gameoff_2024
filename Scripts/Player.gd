@@ -4,10 +4,9 @@ extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hike_timer: Timer = $hike_timer
 
-
 # motion variables
-@export var speed = 300.0
-@export var jump_velocity = -500.0
+@export var speed = 100
+@export var jump_velocity = -200
 var can_move = true 
 var hike = false
 
@@ -15,9 +14,11 @@ var hike = false
 var able_hide = false
 var hide = false
 
+# temporary var
+var has_key = false 
+
 
 func _physics_process(delta: float) -> void:
-		
 
 	if not is_on_floor() and not hike:
 		velocity += get_gravity() * delta

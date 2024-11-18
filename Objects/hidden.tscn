@@ -13,12 +13,13 @@ offset_left = -8.0
 offset_top = -8.0
 offset_right = 8.0
 offset_bottom = 8.0
-color = Color(0.347817, 0.347817, 0.347817, 1)
+color = Color(0.77, 0.2233, 0.2233, 1)
 
 [node name="shape" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_3pea4")
 
 [node name="E" type="Label" parent="."]
+visible = false
 offset_left = -2.0
 offset_top = -6.0
 offset_right = 7.0

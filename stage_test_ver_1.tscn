@@ -1,0 +1,158 @@
+[gd_scene load_steps=16 format=4 uid="uid://d0lm1lscvqb22"]
+
+[ext_resource type="PackedScene" uid="uid://bg8urnpyigogb" path="res://Tileset/tile_map_layer.tscn" id="1_ciqc4"]
+[ext_resource type="PackedScene" uid="uid://dpv2lytalq7rt" path="res://Prefabs/Player.tscn" id="2_pcpn3"]
+[ext_resource type="PackedScene" uid="uid://dqq7q4y3rojlw" path="res://Objects/hike.tscn" id="3_x2kdx"]
+[ext_resource type="PackedScene" uid="uid://7lx6so5e1xwp" path="res://Objects/bullet_spawner.tscn" id="4_waspw"]
+[ext_resource type="Script" path="res://key.gd" id="5_lyeed"]
+[ext_resource type="Script" path="res://Scripts/path_follow_2d.gd" id="5_mnvtl"]
+[ext_resource type="Texture2D" uid="uid://cg2004op8cru1" path="res://icon.svg" id="6_0m7ff"]
+[ext_resource type="Script" path="res://Scripts/door.gd" id="6_l52ek"]
+[ext_resource type="PackedScene" uid="uid://b1vgfa8f8evs7" path="res://Objects/hidden.tscn" id="7_grvtb"]
+[ext_resource type="PackedScene" uid="uid://cfcwwra7qqg1w" path="res://Objects/thorn.tscn" id="7_m4g7v"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_sjnvi"]
+a = Vector2(0, -24)
+b = Vector2(0, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m0rjo"]
+size = Vector2(216, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mjmgc"]
+size = Vector2(2, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k3wnm"]
+size = Vector2(12, 28)
+
+[sub_resource type="Curve2D" id="Curve2D_ejnkn"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 34, 64, 0, 0, 0, 0, 262, 62, 0, 0, 0, 0, 34, 64)
+}
+point_count = 3
+
+[node name="Stage_test_ver_1" type="Node"]
+
+[node name="TileMapLayer" parent="." instance=ExtResource("1_ciqc4")]
+tile_map_data = PackedByteArray("AAAAABQAAAABAAMAAAD//wAAAAABAAEAAAD//wEAAAABAAEAAAD//wIAAAABAAEAAAD//wMAAAABAAEAAAD//wQAAAABAAEAAAD//wUAAAABAAEAAAD//wYAAAABAAEAAAD//wcAAAABAAEAAAD//wgAAAABAAEAAAD//wkAAAABAAEAAAD//woAAAABAAEAAAD//wsAAAABAAEAAAD//wwAAAABAAEAAAD//w0AAAABAAEAAAD//w4AAAABAAEAAAD//w8AAAABAAEAAAD//xAAAAABAAEAAAD//xEAAAABAAEAAAD//xIAAAABAAEAAAD//xMAAAABAAEAAAD//xQAAAABAAMAAAABABQAAAABAAMAAAACABQAAAABAAMAAAADABQAAAABAAMAAAAEABQAAAABAAMAAAAFABQAAAABAAMAAAAGABQAAAABAAMAAAAHABQAAAABAAMAAAALABQAAAABAAMAAAAMABQAAAABAAMAAAANABQAAAABAAMAAAAOABQAAAABAAMAAAAPABQAAAABAAMAAAAQABQAAAABAAMAAAARABQAAAABAAMAAAASABQAAAABAAMAAAATABQAAAABAAMAAAAUABQAAAABAAMAAAAVABQAAAABAAMAAAAWABQAAAABAAMAAAAaABQAAAABAAMAAAAbABQAAAABAAMAAAAcABQAAAABAAMAAAAdABQAAAABAAMAAAAeABQAAAABAAMAAAAfABQAAAABAAMAAAAgABQAAAABAAMAAAAhABQAAAABAAMAAAAiABQAAAABAAMAAAAjABQAAAABAAMAAAAkABQAAAABAAMAAAAkABMAAAABAAEAAAAkABIAAAABAAEAAAAkABEAAAABAAEAAAAkABAAAAABAAEAAAAkAA8AAAABAAEAAAAkAA4AAAABAAEAAAAkAA0AAAABAAEAAAAkAAwAAAABAAEAAAAkAAsAAAABAAEAAAAkAAoAAAABAAEAAAAkAAkAAAABAAEAAAAkAAgAAAABAAEAAAAkAAcAAAABAAEAAAAkAAYAAAABAAEAAAAkAAUAAAABAAEAAAAkAAQAAAABAAEAAAAkAAMAAAABAAEAAAAkAAIAAAABAAEAAAAkAAEAAAABAAEAAAAkAAAAAAABAAEAAAAAAA4AAAABAAAAAAABAA4AAAABAAAAAAACAA4AAAABAAAAAAADAA4AAAABAAAAAAAEAA4AAAABAAAAAAAFAA4AAAABAAAAAAAGAA4AAAABAAAAAAAHAA4AAAABAAAAAAAIAA4AAAABAAAAAAAJAA4AAAABAAAAAAAKAA4AAAABAAAAAAALAA4AAAABAAAAAAAMAA4AAAABAAAAAAANAA4AAAABAAAAAAAOAA4AAAABAAAAAAAPAA4AAAABAAAAAAAQAA4AAAABAAAAAAARAA4AAAABAAAAAAASAA4AAAABAAAAAAATAA4AAAABAAAAAAAUAA4AAAABAAAAAAAVAA4AAAABAAAAAAAWAA4AAAABAAAAAAAXAA4AAAABAAAAAAAYAA4AAAABAAAAAAAZAA4AAAABAAAAAAAaAA4AAAABAAAAAAAbAA4AAAABAAAAAAAcAA4AAAABAAAAAAAdAA4AAAABAAAAAAAeAA4AAAABAAAAAAAeAA8AAAABAAIAAAAdAA8AAAABAAIAAAAcAA8AAAABAAIAAAAbAA8AAAABAAIAAAAaAA8AAAABAAIAAAAZAA8AAAABAAIAAAAYAA8AAAABAAIAAAAXAA8AAAABAAIAAAAWAA8AAAABAAIAAAAVAA8AAAABAAIAAAAUAA8AAAABAAIAAAATAA8AAAABAAIAAAASAA8AAAABAAIAAAARAA8AAAABAAIAAAAQAA8AAAABAAIAAAAPAA8AAAABAAIAAAAOAA8AAAABAAIAAAANAA8AAAABAAIAAAAMAA8AAAABAAIAAAALAA8AAAABAAIAAAAKAA8AAAABAAIAAAAJAA8AAAABAAIAAAAIAA8AAAABAAIAAAAHAA8AAAABAAIAAAAGAA8AAAABAAIAAAAFAA8AAAABAAIAAAAEAA8AAAABAAIAAAADAA8AAAABAAIAAAACAA8AAAABAAIAAAABAA8AAAABAAIAAAAAAA8AAAABAAIAAAAiAA4AAAABAAAAAAAjAA4AAAABAAAAAAAiAA8AAAABAAIAAAAjAA8AAAABAAIAAAAfAA4AAAACAAAAAAAfAA8AAAACAAIAAAAhAA4AAAAAAAAAAAAhAA8AAAAAAAIAAAAAAAkAAAABAAAAAAABAAkAAAACAAAAAAAEAAkAAAAAAAAAAAAGAAkAAAABAAAAAAAHAAkAAAABAAAAAAAFAAkAAAABAAAAAAAIAAkAAAABAAAAAAAJAAkAAAABAAAAAAAKAAkAAAABAAAAAAALAAkAAAABAAAAAAAMAAkAAAABAAAAAAANAAkAAAABAAAAAAAOAAkAAAABAAAAAAAPAAkAAAABAAAAAAAQAAkAAAABAAAAAAARAAkAAAABAAAAAAASAAkAAAABAAAAAAATAAkAAAABAAAAAAAUAAkAAAABAAAAAAAVAAkAAAABAAAAAAAWAAkAAAABAAAAAAAXAAkAAAABAAAAAAAYAAkAAAABAAAAAAAZAAkAAAABAAAAAAAaAAkAAAABAAAAAAAbAAkAAAABAAAAAAAcAAkAAAABAAAAAAAdAAkAAAABAAAAAAAeAAkAAAABAAAAAAAfAAkAAAABAAAAAAAgAAkAAAABAAAAAAAhAAkAAAABAAAAAAAiAAkAAAABAAAAAAAjAAkAAAABAAAAAAAjAAoAAAABAAIAAAAiAAoAAAABAAIAAAAhAAoAAAABAAIAAAAgAAoAAAABAAIAAAAfAAoAAAABAAIAAAAeAAoAAAABAAIAAAAdAAoAAAABAAIAAAAcAAoAAAABAAIAAAAbAAoAAAABAAIAAAAaAAoAAAABAAIAAAAZAAoAAAABAAIAAAAYAAoAAAABAAIAAAAXAAoAAAABAAIAAAAWAAoAAAABAAIAAAAVAAoAAAABAAIAAAAUAAoAAAABAAIAAAATAAoAAAABAAIAAAASAAoAAAABAAIAAAARAAoAAAABAAIAAAAQAAoAAAABAAIAAAAPAAoAAAABAAIAAAAOAAoAAAABAAIAAAANAAoAAAABAAIAAAAMAAoAAAABAAIAAAALAAoAAAABAAIAAAAKAAoAAAABAAIAAAAJAAoAAAABAAIAAAAIAAoAAAABAAIAAAAHAAoAAAABAAIAAAAGAAoAAAABAAIAAAAFAAoAAAABAAIAAAAEAAoAAAAAAAIAAAAAAAoAAAABAAIAAAABAAoAAAACAAIAAAAAAAQAAAABAAAAAAABAAQAAAABAAAAAAACAAQAAAABAAAAAAADAAQAAAABAAAAAAAEAAQAAAABAAAAAAAFAAQAAAABAAAAAAAGAAQAAAABAAAAAAAHAAQAAAABAAAAAAAIAAQAAAABAAAAAAAJAAQAAAABAAAAAAAKAAQAAAABAAAAAAALAAQAAAABAAAAAAAMAAQAAAABAAAAAAANAAQAAAABAAAAAAAOAAQAAAABAAAAAAAPAAQAAAABAAAAAAAQAAQAAAABAAAAAAARAAQAAAABAAAAAAASAAQAAAABAAAAAAATAAQAAAABAAAAAAAUAAQAAAABAAAAAAAVAAQAAAABAAAAAAAWAAQAAAABAAAAAAAXAAQAAAABAAAAAAAYAAQAAAABAAAAAAAZAAQAAAABAAAAAAAaAAQAAAABAAAAAAAbAAQAAAABAAAAAAAcAAQAAAABAAAAAAAdAAQAAAABAAAAAAAeAAQAAAABAAAAAAAfAAQAAAABAAAAAAAgAAQAAAACAAAAAAAiAAQAAAAAAAAAAAAjAAQAAAABAAAAAAAiAAUAAAAAAAIAAAAjAAUAAAABAAIAAAAgAAUAAAACAAIAAAAfAAUAAAABAAIAAAAeAAUAAAABAAIAAAAdAAUAAAABAAIAAAAcAAUAAAABAAIAAAAbAAUAAAABAAIAAAAaAAUAAAABAAIAAAAZAAUAAAABAAIAAAAYAAUAAAABAAIAAAAXAAUAAAABAAIAAAAWAAUAAAABAAIAAAAVAAUAAAABAAIAAAAUAAUAAAABAAIAAAATAAUAAAABAAIAAAASAAUAAAABAAIAAAARAAUAAAABAAIAAAAQAAUAAAABAAIAAAAPAAUAAAABAAIAAAAOAAUAAAABAAIAAAANAAUAAAABAAIAAAAMAAUAAAABAAIAAAALAAUAAAABAAIAAAAKAAUAAAABAAIAAAAJAAUAAAABAAIAAAAIAAUAAAABAAIAAAAHAAUAAAABAAIAAAAGAAUAAAABAAIAAAAFAAUAAAABAAIAAAAEAAUAAAABAAIAAAADAAUAAAABAAIAAAACAAUAAAABAAIAAAABAAUAAAABAAIAAAAAAAUAAAABAAIAAAAJABUAAAACAAEAAAAIABUAAAACAAEAAAAKABUAAAACAAEAAAAXABUAAAACAAEAAAAYABUAAAACAAEAAAAZABUAAAACAAEAAAA=")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(144, 81)
+zoom = Vector2(4, 4)
+
+[node name="hike" parent="." instance=ExtResource("3_x2kdx")]
+position = Vector2(266, 124)
+
+[node name="ColorRect" type="ColorRect" parent="hike"]
+offset_left = -10.0
+offset_top = -26.0
+offset_right = -2.0
+offset_bottom = 36.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hike"]
+position = Vector2(-6, 0)
+shape = SubResource("SegmentShape2D_sjnvi")
+one_way_collision_margin = 0.0
+
+[node name="Bullet_spawner" parent="." instance=ExtResource("4_waspw")]
+position = Vector2(278, 104)
+rotation = -3.14159
+scale = Vector2(1, -1)
+
+[node name="rope" parent="." instance=ExtResource("3_x2kdx")]
+position = Vector2(254, 72)
+
+[node name="ColorRect" type="ColorRect" parent="rope"]
+offset_left = -222.0
+offset_top = 10.0
+offset_right = -2.0
+offset_bottom = 30.0
+color = Color(0.215302, 0.333889, 0.226918, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rope"]
+position = Vector2(-112, 21)
+shape = SubResource("RectangleShape2D_m0rjo")
+
+[node name="hike2" parent="." instance=ExtResource("3_x2kdx")]
+position = Vector2(30, 76)
+
+[node name="ColorRect" type="ColorRect" parent="hike2"]
+offset_left = -10.0
+offset_top = -26.0
+offset_right = -2.0
+offset_bottom = 36.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hike2"]
+position = Vector2(-6, 0)
+shape = SubResource("SegmentShape2D_sjnvi")
+one_way_collision_margin = 0.0
+
+[node name="hike3" parent="." instance=ExtResource("3_x2kdx")]
+position = Vector2(274, 36)
+
+[node name="ColorRect" type="ColorRect" parent="hike3"]
+offset_left = -10.0
+offset_top = -26.0
+offset_right = -2.0
+offset_bottom = 36.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hike3"]
+position = Vector2(-6, 0)
+shape = SubResource("SegmentShape2D_sjnvi")
+one_way_collision_margin = 0.0
+
+[node name="hidden" parent="." instance=ExtResource("7_grvtb")]
+position = Vector2(152, 64)
+
+[node name="Key" type="Area2D" parent="."]
+position = Vector2(12, 2)
+script = ExtResource("5_lyeed")
+
+[node name="ColorRect" type="ColorRect" parent="Key"]
+offset_left = 2.0
+offset_top = 22.0
+offset_right = 8.0
+offset_bottom = 29.0
+color = Color(0.618667, 0.48, 1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Key"]
+position = Vector2(5, 26)
+shape = SubResource("RectangleShape2D_mjmgc")
+
+[node name="thorn" parent="." instance=ExtResource("7_m4g7v")]
+position = Vector2(76, 166)
+
+[node name="thorn2" parent="." instance=ExtResource("7_m4g7v")]
+position = Vector2(196, 168)
+
+[node name="door" type="Area2D" parent="."]
+position = Vector2(4, 128)
+script = ExtResource("6_l52ek")
+
+[node name="ColorRect" type="ColorRect" parent="door"]
+offset_right = 20.0
+offset_bottom = 32.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door"]
+position = Vector2(10, 18)
+shape = SubResource("RectangleShape2D_k3wnm")
+
+[node name="Player" parent="." instance=ExtResource("2_pcpn3")]
+position = Vector2(8, 152)
+
+[node name="Enemy" type="Node2D" parent="."]
+
+[node name="Path2D" type="Path2D" parent="Enemy"]
+curve = SubResource("Curve2D_ejnkn")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Enemy/Path2D"]
+position = Vector2(34, 64)
+rotation = -0.00877171
+rotates = false
+script = ExtResource("5_mnvtl")
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy/Path2D/PathFollow2D"]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("6_0m7ff")
+
+[connection signal="body_entered" from="Key" to="Key" method="_on_body_entered"]
+[connection signal="body_entered" from="door" to="door" method="_on_body_entered"]
