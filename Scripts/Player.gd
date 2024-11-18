@@ -17,6 +17,11 @@ var hide = false
 # temporary var
 var has_key = false 
 
+@export var respawn_location : Vector2 
+
+func _init() -> void:
+	self.respawn_location = self.global_position
+	print('Respawn location set to: ', self.respawn_location)
 
 func _physics_process(delta: float) -> void:
 
@@ -88,6 +93,10 @@ func animate():
 		else:
 			animated_sprite_2d.play("idle_hike")
 
-
 func _on_hike_timer_timeout() -> void:
 	hike = false
+
+func respawn() -> void:
+	print('respawn')
+	
+	self.global_position = self.respawn_location
