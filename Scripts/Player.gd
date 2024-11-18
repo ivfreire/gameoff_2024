@@ -5,8 +5,8 @@ extends CharacterBody2D
 @onready var hike_timer: Timer = $hike_timer
 
 # motion variables
-@export var speed = 100
-@export var jump_velocity = -200
+@export var speed = 300
+@export var jump_velocity = -300
 var can_move = true 
 var hike = false
 
@@ -100,3 +100,4 @@ func respawn() -> void:
 	print('respawn')
 	
 	self.global_position = self.respawn_location
+	self.has_key = false
