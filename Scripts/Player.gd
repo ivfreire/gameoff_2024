@@ -17,22 +17,39 @@ var hide = false
 # temporary var
 var has_key = false 
 
+# coyote time
+@export var coyote_time: float = 0.2  # Duração do coyote time em segundos
+var time_since_on_floor: float = 0.0  # Tempo desde que o jogador esteve no chão
+var can_coyote_jump: bool = false  # Se o jogador pode usar o coyote jump
+
 @export var respawn_location : Vector2 
 
-func _init() -> void:
+#func _init() -> void:
+func _ready() -> void:
+	##melhor passar isso pra ready, a global que ta pegando tá errada
 	self.respawn_location = self.global_position
 	print('Respawn location set to: ', self.respawn_location)
 
 func _physics_process(delta: float) -> void:
+	
+	# atualiza o coyote
+	if is_on_floor():
+		time_since_on_floor = 0.0
+		can_coyote_jump = true
+	else:
+		time_since_on_floor += delta
+		if time_since_on_floor > coyote_time:
+			can_coyote_jump = false
 
 	if not is_on_floor() and not hike:
 		velocity += get_gravity() * delta
 
 	#TODO coyote jump
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and (is_on_floor() or can_coyote_jump):
 		velocity.y = jump_velocity
 		animated_sprite_2d.play("jump")
 		await animated_sprite_2d.animation_finished
+		can_coyote_jump = false  # Evita saltos extras durante o coyote time
 
 
 	var direction := Input.get_axis("move_left", "move_right")

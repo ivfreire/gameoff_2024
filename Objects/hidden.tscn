@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b1vgfa8f8evs7"]
+[gd_scene load_steps=4 format=3 uid="uid://b1vgfa8f8evs7"]
 
 [ext_resource type="Script" path="res://Scripts/Object_scripts/hidden.gd" id="1_htcoo"]
+[ext_resource type="Texture2D" uid="uid://jxj8rpqk87h" path="res://Sprites/curtains-export.png" id="2_4fjrs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3pea4"]
 size = Vector2(8, 14)
@@ -9,6 +10,7 @@ size = Vector2(8, 14)
 script = ExtResource("1_htcoo")
 
 [node name="sprite" type="ColorRect" parent="."]
+visible = false
 offset_left = -8.0
 offset_top = -8.0
 offset_right = 8.0
@@ -28,6 +30,9 @@ scale = Vector2(0.5, 0.5)
 text = "E"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_4fjrs")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

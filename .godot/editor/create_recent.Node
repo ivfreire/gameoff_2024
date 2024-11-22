@@ -1,14 +1,14 @@
+AnimatedSprite2D
+Sprite2D
 CollisionShape2D
 Area2D
 ColorRect
 PathFollow2D
 Path2D
-Sprite2D
 Node2D
 Camera2D
 TileMap
 Node
 Hike
 Timer
-AnimatedSprite2D
 TileMapLayer

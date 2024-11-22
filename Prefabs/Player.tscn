@@ -177,6 +177,8 @@ animations = [{
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_mask = 14
 script = ExtResource("1_blth1")
+speed = 70
+jump_velocity = -200
 
 [node name="shape" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_tj8y8")
