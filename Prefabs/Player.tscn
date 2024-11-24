@@ -1,8 +1,9 @@
-[gd_scene load_steps=24 format=3 uid="uid://dpv2lytalq7rt"]
+[gd_scene load_steps=25 format=3 uid="uid://dpv2lytalq7rt"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_blth1"]
 [ext_resource type="Script" path="res://Scripts/bow.gd" id="3_3nsb4"]
 [ext_resource type="Texture2D" uid="uid://bosrbvwrbk5wm" path="res://Sprites/player.png" id="3_n7y33"]
+[ext_resource type="Texture2D" uid="uid://dw3b1qkqeubb8" path="res://Sprites/light.png" id="4_1ockd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tj8y8"]
 size = Vector2(8, 16)
@@ -186,6 +187,15 @@ shape = SubResource("RectangleShape2D_tj8y8")
 [node name="bow" type="Node2D" parent="."]
 script = ExtResource("3_3nsb4")
 arrow_speed = 500.0
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-2.98023e-08, 2.38419e-07)
+scale = Vector2(0.0600962, 0.0600962)
+color = Color(0.219608, 0.776471, 1, 1)
+energy = 1.15
+blend_mode = 2
+texture = ExtResource("4_1ockd")
+texture_scale = 1.95
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
