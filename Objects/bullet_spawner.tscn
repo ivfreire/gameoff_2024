@@ -1,10 +1,40 @@
-[gd_scene load_steps=4 format=3 uid="uid://7lx6so5e1xwp"]
+[gd_scene load_steps=9 format=3 uid="uid://7lx6so5e1xwp"]
 
 [ext_resource type="Script" path="res://Scripts/Object_scripts/bullet_spawner.gd" id="1_wjh5b"]
 [ext_resource type="PackedScene" uid="uid://duqoet6cbo0g2" path="res://Objects/bullet.tscn" id="2_kc5vb"]
+[ext_resource type="Texture2D" uid="uid://cb3tytusufq1p" path="res://Sprites/statue.png" id="3_u1i4c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dk6ah"]
 size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wic2e"]
+atlas = ExtResource("3_u1i4c")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1pmmj"]
+atlas = ExtResource("3_u1i4c")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_st5x2"]
+atlas = ExtResource("3_u1i4c")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6x5wj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wic2e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1pmmj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_st5x2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Bullet_spawner" type="Area2D"]
 position = Vector2(18, 242)
@@ -14,16 +44,23 @@ script = ExtResource("1_wjh5b")
 bullet = ExtResource("2_kc5vb")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 offset_left = -8.0
 offset_top = -8.0
 offset_right = 8.0
 offset_bottom = 8.0
 
 [node name="timer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 5.0
 autostart = true
 
 [node name="shape" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_dk6ah")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6x5wj")
+autoplay = "default"
+frame_progress = 0.38038
+flip_h = true
 
 [connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]

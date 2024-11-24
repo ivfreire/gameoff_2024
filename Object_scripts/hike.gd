@@ -1,4 +1,4 @@
-class_name Hike extends Area2D 
+class_name Hike extends  Area2D 
 
 @export var endpoint : Hike = null
 

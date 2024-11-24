@@ -1,11 +1,12 @@
-res://lookdev_delet_later.tscn
+res://stage_test_ver_1.tscn
 res://Sprites/plataform_blob/tileset_plataform_blob.tres
+res://Objects/hidden.tscn
+res://Objects/bullet_spawner.tscn
+res://lookdev_delet_later.tscn
 res://Scenes/camera.tscn
 res://Tileset/tile_map_layer.tscn
-res://stage_test_ver_1.tscn
 res://Scenes/HUD.tscn
+res://Prefabs/Player.tscn
+res://Scripts/Object_scripts/hike.gd
 res://Scripts/path_follow_2d.gd
 res://Scripts/Player.gd
-res://Scripts/door.gd
-res://Prefabs/Player.tscn
-res://key.gd
