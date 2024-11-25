@@ -60,7 +60,7 @@ func chasing():
 				speed = 15
 				$anim.play('chasing')
 				
-		if chase and colliding_counter <= 300:
+		if chase and colliding_counter <= 300 and not collider.is_in_group('player'):
 			colliding_counter += 1
 			#print(colliding_counter)
 			if colliding_counter > 300:

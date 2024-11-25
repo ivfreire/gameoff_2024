@@ -180,6 +180,7 @@ collision_mask = 14
 script = ExtResource("1_blth1")
 speed = 70
 jump_velocity = -200
+metadata/_edit_vertical_guides_ = [-42.0]
 
 [node name="shape" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_tj8y8")
@@ -190,10 +191,9 @@ arrow_speed = 500.0
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(-2.98023e-08, 2.38419e-07)
-scale = Vector2(0.0600962, 0.0600962)
-color = Color(0.219608, 0.776471, 1, 1)
-energy = 1.15
-blend_mode = 2
+scale = Vector2(0.07, 0.07)
+energy = 0.2
+shadow_enabled = true
 texture = ExtResource("4_1ockd")
 texture_scale = 1.95
 

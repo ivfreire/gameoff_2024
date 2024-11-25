@@ -1,3 +1,6 @@
+LightOccluder2D
+ColorRect
+CanvasModulate
 ShapeCast2D
 CollisionShape2D
 CharacterBody2D
@@ -7,8 +10,5 @@ AnimationPlayer
 AnimatedSprite2D
 RigidBody2D
 PointLight2D
-CanvasModulate
-LightOccluder2D
-ColorRect
 Area2D
 PathFollow2D
